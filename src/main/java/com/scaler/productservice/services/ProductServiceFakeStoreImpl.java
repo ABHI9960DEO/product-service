@@ -71,4 +71,9 @@ public class ProductServiceFakeStoreImpl implements ProductService{
         return null;
     }
 
+    @Override
+    public Product partialUpdateProduct(Long id, Product product) {
+        return null;
+    }
+
 }

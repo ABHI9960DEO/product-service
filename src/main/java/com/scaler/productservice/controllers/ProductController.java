@@ -15,7 +15,7 @@ public class ProductController {
 
     ProductService productService;
     RestTemplate restTemplate;
-    public ProductController(@Qualifier("fakestoreProductService") ProductService productService) {
+    public ProductController(@Qualifier("databaseProductService") ProductService productService) {
         this.productService = productService;
     }
 
@@ -27,7 +27,7 @@ public class ProductController {
     }
 
     @PostMapping("/products/")
-    public CreateProductResponseDto createProduct(@RequestBody CreateProductRequestDto createProductRequestDto) {
+    public CreateProductResponseDto  createProduct(@RequestBody CreateProductRequestDto createProductRequestDto) {
         Product product = productService.createProduct(createProductRequestDto.toProduct());
         return CreateProductResponseDto.fromProduct(product);
     }

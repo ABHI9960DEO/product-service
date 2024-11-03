@@ -1,6 +1,8 @@
 package com.scaler.productservice.model;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.Setter;
@@ -15,6 +17,8 @@ public class Product extends BaseModel{
     private String description;
     private double price;
     private String imageUrl;
-    @ManyToOne
-    private Category category;
+    //@ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
+    //@JoinColumn(name = "category_id")
+    private Category categoryName;
 }

@@ -1,6 +1,7 @@
 package com.scaler.productservice.dto;
 
 import com.scaler.productservice.model.Category;
+import com.scaler.productservice.model.Product;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,4 +14,17 @@ public class FakeStoreCreateProductDto {
     private Category category;
     private String price;
     private String image;
+
+    public static FakeStoreCreateProductDto fromProduct(Product product) {
+        FakeStoreCreateProductDto fakeStoreCreateProductRequestDto = new FakeStoreCreateProductDto();
+        fakeStoreCreateProductRequestDto.title = product.getTitle();
+        fakeStoreCreateProductRequestDto.description = product.getDescription();
+        Category category = new Category();
+        category.setName(product.getCategoryName().getName());
+        fakeStoreCreateProductRequestDto.category = category;
+        fakeStoreCreateProductRequestDto.price = String.valueOf(product.getPrice());
+        fakeStoreCreateProductRequestDto.image = product.getImageUrl();
+
+        return fakeStoreCreateProductRequestDto;
+    }
 }

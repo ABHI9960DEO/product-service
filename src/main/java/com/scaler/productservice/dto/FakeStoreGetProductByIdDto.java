@@ -22,8 +22,8 @@ public class FakeStoreGetProductByIdDto {
         dto.setTitle(product.getTitle());
         dto.setDescription(product.getDescription());
         Category category = new Category() ;
-        dto.setCategory(product.getCategory());
-        category.setName(product.getCategory().getName());
+        dto.setCategory(product.getCategoryName());
+        category.setName(product.getCategoryName().getName());
 
         return dto;
     }

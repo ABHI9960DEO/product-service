@@ -12,11 +12,12 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CreateProductRequestDto {
+    //private Long id;
     private String title;
     private String description;
     private double price;
     private String imageUrl;
-    private String category;
+    private Category categoryName;
 
     public Product toProduct() {
         Product product = new Product();
@@ -25,10 +26,10 @@ public class CreateProductRequestDto {
         product.setPrice(this.price);
         product.setImageUrl(this.imageUrl);
         Category category = new Category();
-        category.setName(this.category);
 
+        category.setName(categoryName.getName());
+        product.setCategoryName(category);
 
         return product;
-
     }
 }
