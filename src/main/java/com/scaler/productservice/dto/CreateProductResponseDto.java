@@ -1,5 +1,6 @@
 package com.scaler.productservice.dto;
 
+import com.scaler.productservice.model.Category;
 import com.scaler.productservice.model.Product;
 import lombok.Getter;
 import lombok.Setter;
@@ -10,7 +11,7 @@ public class CreateProductResponseDto {
     private Long id;
     private String title;
     private String description;
-    private String category;
+    private Category category;
     private Double price;
     private String imageUrl;
 

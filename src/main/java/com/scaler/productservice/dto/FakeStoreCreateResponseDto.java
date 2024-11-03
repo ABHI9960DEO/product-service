@@ -1,5 +1,6 @@
 package com.scaler.productservice.dto;
 
+import com.scaler.productservice.model.Category;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.stereotype.Service;
@@ -11,6 +12,6 @@ public class FakeStoreCreateResponseDto {
     private String title;
     private String description;
     private String image;
-    private String category;
+    private Category category;
     private String price;
 }

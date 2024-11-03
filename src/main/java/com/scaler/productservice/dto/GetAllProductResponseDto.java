@@ -30,8 +30,8 @@ public class GetAllProductResponseDto {
         product.setDescription(this.getDescription());
         product.setImageUrl(this.getImage());
         Category category = new Category();
-        category.setName(this.getCategory());
-        //product.setCategory(this.getCategory());
+        category.setName(category.getName());
+        product.setCategory(category);
         product.setPrice(Double.parseDouble(this.getPrice()));
         return product;
 

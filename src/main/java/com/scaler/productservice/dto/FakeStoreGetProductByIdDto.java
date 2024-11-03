@@ -12,7 +12,7 @@ public class FakeStoreGetProductByIdDto {
     private Long id;
     private String title;
     private String price;
-    private String category;
+    private Category category;
     private String description;
     private String image;
 
@@ -22,7 +22,7 @@ public class FakeStoreGetProductByIdDto {
         dto.setTitle(product.getTitle());
         dto.setDescription(product.getDescription());
         Category category = new Category() ;
-        //dto.setCategory(product.getCategory());
+        dto.setCategory(product.getCategory());
         category.setName(product.getCategory().getName());
 
         return dto;

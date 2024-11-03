@@ -11,7 +11,7 @@ public class GetProductDto {
     private Long id;
     private String title;
     private String price;
-    private String category;
+    private Category category;
     private String description;
     private String image;
 
@@ -20,8 +20,8 @@ public class GetProductDto {
         dto.setId(product.getId());
         dto.setTitle(product.getTitle());
         Category category = new Category();
-        category.setName(product.getCategory().getName());
-        //dto.setCategory(product.getCategory());
+        category.setName(category.getName());
+        dto.setCategory(category);
         dto.setDescription(product.getDescription());
         dto.setPrice(String.valueOf(product.getPrice()));
         dto.setImage(product.getImageUrl());
